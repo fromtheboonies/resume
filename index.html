@@ -1,8 +1,15 @@
 <html>
 	<head>
 		<link href="style.css" rel="stylesheet">
+        <script src="script.js"></script>
 		<title>Jesse Schauer, M.S.E.</title>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+        <!--                                     
+            What are you looking for?  You must be a coder or designer since nobody else views source.
+            This is nothing fancy - just slapped it together from a generic base template I found for a simple and free web presence to help spread my tech gospel.
+            I design and develop complex web applications that help businesses get stuff done, not websites for marketing purposes.
+            If you think it should be fancier, or if you want to give me some praise; you can contact me via any of the listed contact details.
+        -->
 	</head>
 
 	<body>
@@ -19,7 +26,7 @@
 					<h2>CONTACT</h2>
 					<p>
                         <i class="fa fa-envelope" aria-hidden="true"></i>
-                        <a href="mailto:jesseschauer@outlook.com">Jesseschauer@outlook.com</a>
+                        <a href="mailto:jesseschauer@outlook.com">JesseSchauer@outlook.com</a>
                     </p>
                     <p>
                         <i class="fab fa-github" aria-hidden="true"></i>
@@ -47,6 +54,59 @@
                     <p>
                         Coursework included: All stages of the Software Development Life Cycle (Investigation, Project Planning/Management, Analysis, Design, Implementation, Testing, and Maintenance), and Artificial Intelligence/Machine Learning/Game Theory.
                     </p>
+                    <button class="collapsible">Detailed Classlist</button>                    
+                    <div id="MSEclasslist_container" class="content ">
+                        <ul class="classlist">
+                            <li>
+                                <h4>CSci 713 Software Development Processes</h4>
+                                <p>This course is designed as a breadth course on the software engineering process. Basic concepts are reviewed and reassured to create a basis for higher concepts and techniques.</p>
+                            </li>
+                            <li>
+                                <h4>CSci 714 Software Project Planning and Estimation</h4>
+                                <p>This course is designed to introduce the student to concepts and techniques of how to plan for a software project. This includes time and effort estimation, planning and teaming the project, and managing the development activities.</p>
+                            </li>
+                            <li>
+                                <h4>CSci 715 Software Requirements Definition and Analysis</h4>
+                                <p>This course is designed to make the student able to identify and capture requirements for a software system and be able to document and assess the requirements.</p>
+                            </li>
+                            <li>
+                                <h4>CSci 716 Software Design</h4>
+                                <p>This course covers both architectural design and module design. Students receive practice using a set of patterns to produce software designs with several different types of architecture. Substantial presentation and practice with the UML modeling language is provided.</p>
+                            </li>
+                            <li>
+                                <h4>CSci 717 Software Construction</h4>
+                                <p>This course covers the fundamentals of software construction including programming and evaluation of the source code. Students receive a good grounding in and extensive practice with the comprehensive libraries associated with a modern programming language.</p>
+                            </li>
+                            <li>
+                                <h4>CSci 718 Software Testing and Debugging</h4>
+                                <p>This course covers the goals, practices, evaluation and limitations of software testing and software debugging. Students receive practice in developing and using test plans and various testing and debugging techniques.</p>
+                            </li>
+                            <li>
+                                <h4>CSci 724 Survey of Artificial Intelligence</h4>
+                                <p>Survey of major areas of AI including theorem proving, heuristic search, problem solving, computer analysis of scenes, robotics, natural language understanding, and knowledge-based systems.</p>
+                            </li>
+                            <li>
+                                <h4>CSci 746 Development of Distributed Systems</h4>
+                                <p>This course is an advanced course in software engineering aiming at strategies and solutions of distributed systems. It assumes the knowledge of software engineering and particularly design and implementation of software systems, then builds on these concepts to how distributed systems are designed and implemented.</p>
+                            </li>
+                            <li>
+                                <h4>CSci 747 Software Complexity Metrics</h4>
+                                <p>This course covers complexity metrics for the entire software lifecycle. Students gain experience in using requirements metrics, design metrics, program metrics, test metrics, and planning metrics. The effectiveness and limitations of metrics in all these areas are emphasized.</p>
+                            </li>
+                            <li>
+                                <h4>CSci 765 Introduction to Database Systems</h4>
+                                <p>Basic database concepts, models, management facilities, data structures, storage structures, data definition languages, data manipulation languages, normalization, operator implementation algorithms, transactions, correctness, reliability, distribution, performance analysis.</p>
+                            </li>
+                            <li>
+                                <h4>CSci 793 Individual Study:  Software Development Project (2 semesters)</h4>
+                                <p>Each student develops a software project either alone or as part of a team.  If the student works as part of a team, the student's contribution to the project must be significant and easily identified.</p>
+                            </li>
+                            <li>
+                                <h4>Successful completion of an Internet-based sixteen hour module on Computer Ethics.</h4>
+                            </li>                            
+                        </ul>
+                    </div>
+
                     <h3>Bachelor of Science - Business Management</h3>
                     <p>
                         University of Mary, Bismarck ND
@@ -246,10 +306,29 @@
                     </h4>
                     <ul>
                         <li>Used a Particle Photon development board and IFTT to build a WiFi enabled freezer sensor to push mobile alert notifications</li>
-                        <li>Porting the project to use a cheaper microcontroller and MQTT protocol</li>
+                        <li>Ported the project to use a cheaper ESP8266 based microcontroller and MQTT protocol to interface with my Home Assistant server</li>
                     </ul>
 				</section>
 			</article>
 		</main>
 	</body>
+
+    <script>
+        (function() {
+            var coll = document.getElementsByClassName("collapsible");
+            var i;
+            for (i = 0; i < coll.length; i++) {
+                coll[i].addEventListener("click", function() {
+                    this.classList.toggle("active");
+                    var content = this.nextElementSibling;
+                    if (content.style.maxHeight){
+                        content.style.maxHeight = null;
+                    } else {
+                        content.style.maxHeight = content.scrollHeight + "px";
+                    }
+                });
+            }
+        })();
+
+    </script>
 </html>
